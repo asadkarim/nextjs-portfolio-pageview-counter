@@ -1,178 +1,39 @@
 ---
-title: "@upstash/kafka"
-description: A fully typed Kafka client built for Upstash Kafka and HTTP, perfect for serverless and edge runtimes
+title: "E-commerce Apparel Company – Atlanta, GA (QuickBooks → Business Central)"
+description: A rapidly growing online fashion retailer based in Atlanta, managing multiple SKUs and online channels via QuickBooks Desktop. The company faced challenges in inventory management, order processing, and financial reporting due to QuickBooks' limitations.
 date: "2022-01-08"
-url: https://upstash.com/kafka
-repository: upstash/upstash-kafka
+url: 
+repository: 
 published: true
 
 ---
+Goals:
 
+Migrate from QuickBooks Desktop to Business Central.
 
-An HTTP/REST based Kafka client built on top of
-[Upstash REST API](https://docs.upstash.com/kafka/rest).
+Centralize inventory across multiple warehouses and online platforms.
 
-It is the only connectionless (HTTP based) Kafka client and designed for:
+Automate order processing and financial reporting.
 
-- Serverless functions (AWS Lambda ...)
-- Cloudflare Workers (see the example)
-- Fastly Compute@Edge
-- Next.js Edge, Remix ...
-- Client side web/mobile applications
-- WebAssembly and other environments where HTTP is preferred over TCP
-  connections.
+My Role:
+As the lead consultant, I spearheaded the migration process, which included:
 
-# Installation
+Utilizing the QuickBooks Data Migration Extension to transfer customers, vendors, items, and chart of accounts into Business Central.
 
-```bash
-npm install @upstash/kafka
-```
+Integrating Shopify with Business Central for real-time inventory updates and seamless order processing.
 
-# Quickstart
+Implementing Power Automate workflows to automate order approvals, invoicing, and shipping notifications.
 
-## Auth
+Developing Power BI dashboards to provide real-time insights into sales, inventory levels, and financial performance.
 
-1. Go to [upstash](https://console.upstash.com/kafka) and select your database.
-2. Copy the `REST API` secrets at the bottom of the page
+Conducting comprehensive training sessions for the client's operations and finance teams to ensure smooth adoption of the new system.
 
-```typescript
-import { Kafka } from "@upstash/kafka"
+Outcome:
 
-const kafka = new Kafka({
-  url: "<UPSTASH_KAFKA_REST_URL>",
-  username: "<UPSTASH_KAFKA_REST_USERNAME>",
-  password: "<UPSTASH_KAFKA_REST_PASSWORD>",
-})
-```
+Achieved a 40% improvement in inventory accuracy.
 
-## Produce a single message
+Reduced order fulfillment time by 30%.
 
-```typescript
-const p = kafka.producer()
-const message = { hello: "world" } // Objects will get serialized using `JSON.stringify`
-const res = await p.produce("<my.topic>", message)
-const res = await p.produce("<my.topic>", message, {
-  partition: 1,
-  timestamp: 12345,
-  key: "<custom key>",
-  headers: [{ key: "traceId", value: "85a9f12" }],
-})
-```
+Enhanced financial reporting capabilities, providing the client with real-time insights into their business performance.
 
-## Produce multiple messages.
-
-The same options from the example above can be set for every message.
-
-```typescript
-const p = kafka.producer()
-const res = await p.produceMany([
-  {
-    topic: "my.topic",
-    value: { hello: "world" },
-    // ...options
-  },
-  {
-    topic: "another.topic",
-    value: "another message",
-    // ...options
-  },
-])
-```
-
-## Consume
-
-The first time a consumer is created, it needs to figure out the group
-coordinator by asking the Kafka brokers and joins the consumer group. This
-process takes some time to complete. That's why when a consumer instance is
-created first time, it may return empty messages until consumer group
-coordination is completed.
-
-```typescript
-const c = kafka.consumer()
-const messages = await c.consume({
-  consumerGroupId: "group_1",
-  instanceId: "instance_1",
-  topics: ["test.topic"],
-  autoOffsetReset: "earliest",
-})
-```
-
-More examples can be found in the
-[docstring](https://github.com/upstash/upstash-kafka/blob/main/pkg/consumer.ts#L265)
-
-## Commit manually
-
-While `consume` can handle committing automatically, you can also use
-`Consumer.commit` to manually commit.
-
-```typescript
-const consumerGroupId = "mygroup"
-const instanceId = "myinstance"
-const topic = "my.topic"
-
-const c = kafka.consumer()
-const messages = await c.consume({
-  consumerGroupId,
-  instanceId,
-  topics: [topic],
-  autoCommit: false,
-})
-
-for (const message of messages) {
-  // message handling logic
-
-  await c.commit({
-    consumerGroupId,
-    instanceId,
-    offset: {
-      topic: message.topic,
-      partition: message.partition,
-      offset: message.offset,
-    },
-  })
-}
-```
-
-## Fetch
-
-You can also manage offsets manually by using `Consumer.fetch`
-
-```typescript
-const c = kafka.consumer()
-const messages = await c.fetch({
-  topic: "greeting",
-  partition: 3,
-  offset: 42,
-  timeout: 1000,
-})
-```
-
-## Examples
-
-See [/examples](https://github.com/upstash/upstash-kafka/tree/main/examples) as
-well as various examples in the docstrings of each method.
-
-# Contributing
-
-## Requirements
-
-- [nodejs](https://nodejs.org) v14.x or higher
-- [pnpm](https://pnpm.io/installation)
-
-## Setup
-
-0. Install dependencies using `pnpm install`
-1. Create a kafka instance on upstash.
-   [docs](https://docs.upstash.com/kafka#create-a-kafka-cluster)
-2. Create the following topics: `blue`, `red`, `green`.
-   [docs](https://docs.upstash.com/kafka#create-a-topic)
-
-   The partitions or retention settings don't matter at this time.
-
-3. Create `.env` file with your kafka secrets `cp .env.example .env`
-
-## Running tests
-
-```bash
-pnpm test
-```
+Contact: asadkarim.fc@gmail.com | 678-857-9618
