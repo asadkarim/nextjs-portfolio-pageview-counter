@@ -1,100 +1,86 @@
 ---
-title: Upstash Core Analytics
-description: Low level utilities to build analytics tools on top of Redis.
+title: Nonprofit Organization – Manhattan, NY (Navision → Business Central)
+description: A nonprofit organization based in Manhattan, NY, managing multiple donation streams and grant-funded projects. The organization used Microsoft Dynamics NAV and sought to upgrade to a more modern and efficient ERP system.
 date: "2023-02-13"
-url: https://console.upstash.com/ratelimit
-repository: upstash/core-analytics
+url: 
+repository: 
 published: true
 
----
+---Goals:
 
+Migrate from Dynamics NAV to Business Central.
 
-This library offers some low level building blocks to record and analyze custom events in Redis.
-It's main purpose is to provide a simple way to record and query events in Redis without having to worry about the underlying data structure so we can build more advanced analytics features on top of it.
+Streamline donation tracking and grant management.
 
-## Quickstart
+Provide seamless remote access and data integration.
 
+My Role:
 
-1. Create a redis database
+Led the migration process from Dynamics NAV to Business Central, ensuring a smooth transition with minimal disruption.
 
-Go to [console.upstash.com/redis](https://console.upstash.com/redis) and create
-a new global database.
+Configured donation tracking and grant management processes in Business Central.
 
-After creating the db, copy the `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` to your `.env` file.
+Implemented Power Automate workflows to automate donation acknowledgments and grant reporting.
 
-3. Install `@upstash/analytics` in your project
+Developed Power BI dashboards to provide real-time insights into donation trends and grant utilization.
 
-```bash
-npm install @upstash/analytics @upstash/redis
-```
+Provided training and support to ensure successful adoption of the new system.
 
-4. Create an analytics client
+Outcome:
 
-```ts
-import { Analytyics } from "@upstash/analytics";
-import { Redis } from "@upstash/redis";
+Improved donor engagement through timely acknowledgments.
 
-const analytics = new Analytics({
-  redis: Redis.fromEnv(),
-  window: "1d",
-});
-```
+Enhanced grant reporting capabilities, ensuring compliance and transparency.
 
+Reduced manual data entry by 40%, increasing operational efficiency.
 
-5. Ingest some events
+Contact: asadkarim.fc@gmail.com | 678-857-9618
 
-An event consists of a `time` field and any additional key-value pairs that you can use to record any information you want.
+17. Architectural Firm – Queens, NY (Dynamics GP → Business Central with Multi-Entity Setup)
 
-```ts
-const event = {
-  time: Date.now() // optional (default: Date.now())
-  userId: "chronark",
-  page: "/auth/login",
-  country: "DE",
-}
+Platform & Tools:
 
-await analytics.ingest("pageviews", event);
-```
+Microsoft Dynamics GP
 
-4. Query your events
+Microsoft Dynamics 365 Business Central
 
-```ts
+Power Automate
 
-const result = await analytics.query("pageviews");
+Power BI
 
-```
+Multi-Entity Management
 
-## Development
+Client Overview:
+An architectural firm with multiple offices across Queens, NY, operating separate Dynamics GP instances for each location. The firm sought to consolidate its operations into a single Business Central instance to streamline processes and improve financial visibility.
 
-This project uses `pnpm` for dependency management.
+Goals:
 
-#### Install dependencies
+Migrate from Dynamics GP to Business Central with a multi-entity setup.
 
-```bash
-pnpm install
-```
+Standardize chart of accounts and financial reporting across all entities.
 
-#### Build
+Automate intercompany transactions and financial consolidations.
 
-```bash
-pnpm build
-```
+My Role:
 
+Led the migration process from Dynamics GP to Business Central, configuring a multi-entity structure to accommodate the firm's multiple offices.
 
-## Database Schema
+Mapped and migrated data from Dynamics GP to Business Central, ensuring consistency and accuracy.
 
-All metrics are stored in Redis `Hash` data types and sharded into buckets based on the `window` option.
-```
-@upstash/analytics:{TABLE}:{TIMESTAMP}
-```
-- `TABLE` is a namespace to group events together. ie for managing multiple projects int a single database
-- `TIMESTAMP` is the starting timestamp of each window
+Implemented Multi-Entity Management solutions to automate intercompany transactions and financial consolidations.
 
-The field of each hash is a serialized JSON object with the user's event data and the value is the number of times this event has been recorded.
+Developed Power Automate workflows to streamline procurement approvals and financial processes.
 
-```json
-{
-  '{"page": "/auth/login","country": "DE"}': 5,
-  '{"page": "/auth/login","country": "US"}': 2
-}
-```
+Created Power BI dashboards to provide consolidated financial reporting and performance metrics across all entities.
+
+Provided training and post-implementation support to ensure successful adoption of the new system.
+
+Outcome:
+
+Reduced month-end close time by 50% across all entities.
+
+Achieved seamless intercompany transactions and financial consolidations.
+
+Enhanced financial visibility, enabling better decision-making and strategic planning.
+
+Contact: asadkarim.fc@gmail.com | 678-857-9618
