@@ -1,6 +1,6 @@
 ---
-title: "@upstash/redis"
-description: A fully typed Redis client built for Upstash Redis and HTTP, perfect for serverless and edge runtimes.
+title:Renewable Energy Equipment Manufacturer – Austin, TX
+description: Manufacturer of solar panels and renewable energy components. Needed better warehouse management and production tracking to scale operations.
 date: "2022-03-14"
 url: https://upstash.com/redis
 repository: upstash/upstash-redis
@@ -8,38 +8,28 @@ published: true
 
 ---
 
-Upstash is a cloud-based service provider that offers a Redis-compatible service. In addition to that, we have also created an npm package called `@upstash/redis`. This package provides a strongly typed Redis client that uses HTTP instead of TCP to communicate with the database, making it perfect for serverless and edge runtimes.
+Goals:
 
-Redis is a popular open-source, in-memory data structure store that can be used as a database, cache, and message broker. It is commonly used for web applications that require fast data access and manipulation. Redis clients communicate with Redis servers using the Redis protocol over TCP/IP.
+Streamline warehouse management across multiple facilities.
 
-However, in some cases, TCP is not available. For example, edge functions run on cloud platforms, which often block TCP connections for various reasons. This is where `@upstash/redis` comes in handy. Instead of using TCP, it uses HTTP to communicate with the servers.
+Track production in real-time and automate supplier coordination.
 
-The package is designed to be easy to use and provides a simple API for Redis commands. It also includes support for Redis transactions and Lua scripting. It is written in TypeScript, which provides static typing and better code completion in modern editors.
+Reduce manual errors in procurement and shipping.
 
-One of the main benefits of using `@upstash/redis` is that it is strongly typed. This means that you get better type checking and error handling in your code. Additionally, the package is designed to be lightweight and optimized for performance. This makes it an excellent choice for applications that require fast data access and manipulation.
+My Role:
 
-```ts
-import { Redis } from "@upstash/redis"
+Led a cross-functional team of 4, handling hands-on configuration of warehouse, production, and procurement modules.
 
-const redis = new Redis({
-  url: <UPSTASH_REDIS_REST_URL>,
-  token: <UPSTASH_REDIS_REST_TOKEN>,
-})
+Implemented Power Automate flows for automatic purchase order approvals and shipment notifications.
 
-// string
-await redis.set('key', 'value');
-let data = await redis.get('key');
-console.log(data)
+Built dashboards in Power BI for production KPIs.
 
-await redis.set('key2', 'value2', {ex: 1});
+Outcome:
 
-// sorted set
-await redis.zadd('scores', { score: 1, member: 'team1' })
-data = await redis.zrange('scores', 0, 100 )
-console.log(data)
+35% faster order fulfillment and shipment processes.
 
-// list
-await redis.lpush('elements', 'magnesium')
-data = await redis.lrange('elements', 0, 100 )
-console.log(data)
-```
+Real-time dashboards enabled proactive supply chain decisions.
+
+Supplier coordination improved, reducing stockouts and delays.
+
+Contact: asadkarim.fc@gmail.com | 678-857-9618
