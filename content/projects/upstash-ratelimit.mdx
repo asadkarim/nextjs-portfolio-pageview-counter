@@ -1,49 +1,36 @@
 ---
-title: "@upstash/ratelimit"
-description: Ratelimiting library for serverless and edge runtimes. Built on top of Upstash Redis.
+title: "E-commerce Apparel Company – Los Angeles, CA (QuickBooks → Business Central)"
+description: Online fashion retailer managing multiple SKUs and online channels via QuickBooks, struggling with inventory and order management.
 date: "2022-06-06"
-url: https://upstash.com/blog/upstash-ratelimit
-repository: upstash/ratelimit
+url: h
+repository: 
 published: true
 
 ---
+Goals:
 
-In today's digital age, serverless computing has become increasingly popular due to its scalability and cost-efficiency. One of the challenges of serverless computing is to manage resources efficiently, and one critical aspect of this is rate limiting. Rate limiting is a technique that limits the number of requests a client can make to a server over a given period. This technique can prevent abuse, improve performance, and reduce costs. One npm package that helps implement rate limiting for serverless applications is @upstash/ratelimit, built on top of Upstash Redis.
+Migrate from QuickBooks to Business Central.
 
-Upstash is a managed Redis-compatible database service designed for serverless applications.
+Centralize inventory across warehouses and Shopify online stores.
 
-`@upstash/ratelimit` is an npm package that provides serverless rate limiting using Upstash Redis. The package offers a simple API that can be used to limit the number of requests a client can make within a given time frame. The following algorithms are supported:
+Automate order processing, invoicing, and reporting.
 
-- Fixed window
-- Sliding window
-- Leaky bucket
+My Role:
 
+Managed the migration of customer, product, and financial data from QuickBooks to BC.
 
-Using `@upstash/ratelimit` is straightforward. First, you need to install the package using npm:
+Configured multi-warehouse inventory management and integrated Shopify for real-time stock updates.
 
-```bash
-npm install @upstash/ratelimit @upstash/redis
-```
-Then, you can use it in your  application:
+Implemented automated workflows for order fulfillment, invoicing, and shipping notifications using Power Automate.
 
-```ts
-import { Ratelimit } from "@upstash/ratelimit"
-import { Redis } from "@upstash/redis"
+Trained operations and finance teams on Business Central dashboards, Shopify integration, and reporting tools.
 
-const ratelimit = new Ratelimit({
-    redis: new Redis({
-        url: "",
-        token: ""
-    }),
-    limiter: Ratelimit.slidingWindow(10, "10s"),
-    analytics: true
-})
+Outcome:
 
+Inventory accuracy increased by 40%.
 
-// Check if the client has exceeded the rate limit
-const { success } = await ratelimit.limit("identifier")
-```
+Order fulfillment time reduced by 30%.
 
-In the code above, we initialize Upstash with our Upstash Redis credentials and define our rate limiting rules. We then call the `limit` function, passing the identifier. The function returns a Promise that resolves with `success` and some other useful data.
+Unified reporting and Shopify integration improved financial visibility and sales tracking.
 
-`@upstash/ratelimit` is a useful npm package for serverless rate limiting that simplifies the process of implementing rate limiting for serverless applications. The package is built on top of Upstash Redis, which provides a complete solution for serverless applications. With `@upstash/ratelimit`, serverless developers can easily implement rate limiting, which can help prevent abuse, improve performance, and reduce costs.
+Contact: asadkarim.fc@gmail.com | 678-857-9618
