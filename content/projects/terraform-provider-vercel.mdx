@@ -1,46 +1,34 @@
 ---
-title: Vercel Terraform Provider
-description: A Terraform provider for Vercel. It has been deprecated it when Vercel rolled out their official provider.
+title: Wholesale Distribution Company – Miami, FL
+description: Microsoft Dynamics GP → Business Central, Power Automate, Copilot Studio
 date: "2021-03-16"
-repository: chronark/terraform-provider-vercel
-url: https://registry.terraform.io/providers/chronark/vercel/latest
+repository: 
+url: 
 published: true
 ---
 
+Goal: Transition from GP to Business Central to unify multiple warehouses, streamline order processing, and consolidate financials.
+How I Tackled It:
 
+Analyzed GP setup and mapped all inventory, warehouse, and financial data for migration.
 
-Back in the day when Vercel didn't have an official Terraform provider, I wrote one. 
-I needed to manage my Vercel projects and especially sync environment variables from different cloud providers.
-Terraform was great to provision some postgres databases on digital ocean, but there was no way to sync the credentials with Vercel.
+Configured Business Central for multi-warehouse management, intercompany transactions, and consolidated financial reporting.
 
-```hcl
-terraform {
-  required_providers {
-    vercel = {
-      source  = "registry.terraform.io/chronark/vercel"
-      version = ">=0.10.3"
-    }
-  }
-}
+Implemented automated inventory replenishment and order processing workflows using Power Automate.
 
-provider "vercel" {
-  token = "<YOUR_TOKEN>"
-}
+Guided the team through hands-on training sessions and post-migration support.
+Outcome:
 
-resource "vercel_project" "my_project" {
-  name = "project-via-terraform"
-  git_repository {
-    type = "github"
-    repo = "chronark/terraform-provider-vercel"
-  }
-}
-```
+Successful GP-to-BC migration completed on schedule with accurate financial and inventory data.
 
+35% faster order processing and improved warehouse efficiency.
+
+Consolidated reporting allowed executive management to make data-driven decisions quickly.
 It was a fun project and I learned a lot about Terraform and Vercel's API. 
 It gave me the opportunity to contribute to the Terraform ecosystem and my appreciation for the work that the Terraform team does is immense.
 
 There have been quite a few individuals and teams that have used this provider and I am happy that it has been useful to you.
 
-Now that Vercel have stepped in, I have decided to [deprecate](https://twitter.com/chronark_/status/1517759708983177218) this one on April 23rd 2022. 
+Now that Vercel have stepped in, I have decided to [deprecate](https://twitter.com/chronark_/status/1517759708983177218) this one on April 23rd, 2022. 
 
 Please use the [official provider](https://registry.terraform.io/providers/vercel/vercel/latest) instead.
