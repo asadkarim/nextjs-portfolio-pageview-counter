@@ -6,10 +6,10 @@ import { Card } from "../components/card";
 
 const socials = [
 	{
-		icon: <Twitter size={20} />,
-		href: "https://twitter.com/chronark_",
-		label: "Twitter",
-		handle: "@chronark_",
+		icon: <Linkedin size={20} />,
+		href: "https://www.linkedin.com/in/asadkarim1",
+		label: "LinkedIn",
+		handle: "@asadkarim1",
 	},
 	{
 		icon: <Mail size={20} />,
